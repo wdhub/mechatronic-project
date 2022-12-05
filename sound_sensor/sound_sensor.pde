@@ -12,8 +12,9 @@ void setup()
   size(700, 700);
   String portName = Serial.list()[0];
   myPort = new Serial(this, portName, 9600);
-  //song =new SoundFile(this,"clip.mp3");
-  //song.loop();
+  //println(portName);
+  song =new SoundFile(this,"clip.mp3");
+  song.loop();
 }
 
 void draw()
@@ -23,11 +24,11 @@ void draw()
   }
   background(2, 44, 67);
   
-  float volume=float(val)/250.0;//volume for sound
+  float volume=pow(float(val)-115,2)/400.0;//volume for sound
   ellipse(350, 350, val, val);
   fill(255, 215, 0);
-  //song.amp(volume);
-  println(volume);
+  song.amp(volume);
+  println(val);
   
   delay(100);
 }
