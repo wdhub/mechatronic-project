@@ -1,3 +1,5 @@
+#include <MPU6050.h>
+
 /*
   Analog Input
 

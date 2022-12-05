@@ -15,14 +15,23 @@ Servo myservo;  // create servo object to control a servo
 
 int pos = 0;    // variable to store the servo position
 int previousPos=0;
-
+int enA = 9;
+int in1 = 4;
+int in2 = 5;
+int speed;
 
 
 MPU6050 mpu;
 
 void setup() 
 {
-  Serial.begin(115200);
+  pinMode(enA, OUTPUT);
+  pinMode(in1, OUTPUT);
+  pinMode(in2, OUTPUT);
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
+  
+  Serial.begin(9600);
   
   // Initialize MPU6050
   Serial.println("Initialize MPU6050");
@@ -47,7 +56,8 @@ void setup()
   
   // Check settings
   checkSettings();
-  myservo.attach(9);  // attaches the servo on pin 9 to the servo object
+  //myservo.attach(9);  // attaches the servo on pin 9 to the servo object
+  
 }
 
 void checkSettings()
@@ -95,12 +105,12 @@ int turnUp(int previousPos){
     // in steps of 1 degree
       myservo.write(pos);              // tell servo to go to position in variable 'pos'
       delay(15);
-      Serial.println("pos:");
-      Serial.println(pos); 
+      //Serial.println("pos:");
+      //Serial.println(pos); 
   }
   previousPos=pos;//update latest position
-  Serial.println("previousPos:");
-  Serial.println(previousPos);
+  //Serial.println("previousPos:");
+  //Serial.println(previousPos);
 
   return previousPos;
 }
@@ -110,12 +120,12 @@ int turnDown(int previousPos){
     // in steps of 1 degree
       myservo.write(pos);              // tell servo to go to position in variable 'pos'
       delay(15);
-      Serial.println("pos:");
-      Serial.println(pos); 
+      //Serial.println("pos:");
+      //Serial.println(pos); 
   }
   previousPos=pos;//update latest position
-  Serial.println("previousPos:");
-  Serial.println(previousPos);
+  //Serial.println("previousPos:");
+ //Serial.println(previousPos);
 
   return previousPos;
 }
@@ -129,13 +139,14 @@ void loop()
 {
   Vector rawGyro = mpu.readRawGyro();
   Vector normGyro = mpu.readNormalizeGyro();
-
+/*
   Serial.print(" Xraw = ");
   Serial.print(rawGyro.XAxis);
   Serial.print(" Yraw = ");
   Serial.print(rawGyro.YAxis);
   Serial.print(" Zraw = ");
   Serial.println(rawGyro.ZAxis);
+*/
 /*
   Serial.print(" Xnorm = ");
   Serial.print(normGyro.XAxis);
@@ -144,15 +155,30 @@ void loop()
   Serial.print(" Znorm = ");
   Serial.println(normGyro.ZAxis);
   */
-  
-
-  if(rawGyro.YAxis>900)
+//base control
+ /*
+  if(rawGyro.XAxis>900)
     previousPos=turnUp(previousPos);
   //if x-axis<-200, turn down
-  if(rawGyro.YAxis<-900)
+  if(rawGyro.XAxis<-900)
     previousPos=turnDown(previousPos);
+ */ 
+ 
+//wing control
+  speed=map(rawGyro.YAxis,-17000,17000,-125,125);
+  speed+=125;
+  //Serial.println(speed);
+
+  // communicate to processing  
+  Serial.write(int(speed));// int(speed)
+  
+ 
+  analogWrite(enA, 200);
+
+  delay(500);
+
+  //Serial.println(rawGyro.YAxis);
+
   
    
 }
-
-
