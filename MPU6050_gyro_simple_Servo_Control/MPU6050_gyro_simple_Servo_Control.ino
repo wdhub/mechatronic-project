@@ -1,37 +1,55 @@
 /*
-    MPU6050 Triple Axis Gyroscope & Accelerometer. Simple Gyroscope Example.
-    Read more: http://www.jarzebski.pl/arduino/czujniki-i-sensory/3-osiowy-zyroskop-i-akcelerometr-mpu6050.html
-    GIT: https://github.com/jarzebski/Arduino-MPU6050
-    Web: http://www.jarzebski.pl
-    (c) 2014 by Korneliusz Jarzebski
+    IMU - ARDUINO - DC MOTOR (wings of bird)
+                  - SERVO MOTOR (not using for now)
+                  - PROCESSING (visual+sound effect)
+    Function:
+    - raise hand, dc motor speed up; lower hand, motor speed down;
+    - the higher the speed is, the bigger the moon in Processing is;
+    - the volume of music change according to speed now. Can be changed to other axis of imu.
+                  
+    ARDUINO-PROCESSING:
+    - Comment all the serial.println(), if communication between arduino and processing needed.
+    - Adjust the speed of sending mainly via delay in loop():
+      - too fast: processing can't react in time
+      - too slow: arduino can't react to imu in time
+      - Baud rate: 9600. can be adjusted, but not helping much.
+    
+    
 */
 
 #include <Wire.h>
 #include <MPU6050.h>
 #include <Servo.h>
 
+// servo variables
 Servo myservo;  // create servo object to control a servo
-// twelve servo objects can be created on most boards
-
 int pos = 0;    // variable to store the servo position
-int previousPos=0;
+int previousPos=0; // latest position of servo
+
+//pin definition
 int enA = 9;
 int in1 = 4;
 int in2 = 5;
-int speed;
 
+int speed;// speed of dc motor, int, 0-250
 
+//imu variable
 MPU6050 mpu;
+
 
 void setup() 
 {
+  //dc motor set up
   pinMode(enA, OUTPUT);
   pinMode(in1, OUTPUT);
   pinMode(in2, OUTPUT);
+  //enable motor
   digitalWrite(in1, HIGH);
   digitalWrite(in2, LOW);
+
   
   Serial.begin(9600);
+
   
   // Initialize MPU6050
   Serial.println("Initialize MPU6050");
@@ -40,22 +58,12 @@ void setup()
     Serial.println("Could not find a valid MPU6050 sensor, check wiring!");
     delay(500);
   }
-  
-  // If you want, you can set gyroscope offsets
-  // mpu.setGyroOffsetX(155);
-  // mpu.setGyroOffsetY(15);
-  // mpu.setGyroOffsetZ(15);
-  
-  // Calibrate gyroscope. The calibration must be at rest.
-  // If you don't want calibrate, comment this line.
-  mpu.calibrateGyro();
 
-  // Set threshold sensivty. Default 3.
-  // If you don't want use threshold, comment this line or set 0.
+  //imu set up
+  mpu.calibrateGyro();
   mpu.setThreshold(3);
-  
-  // Check settings
   checkSettings();
+  
   //myservo.attach(9);  // attaches the servo on pin 9 to the servo object
   
 }
@@ -97,7 +105,9 @@ void checkSettings()
   
   Serial.println();
 }
-//Motor functions
+
+
+//servo Motor functions
 
 // goes +5 degree
 int turnUp(int previousPos){
@@ -139,30 +149,8 @@ void loop()
 {
   Vector rawGyro = mpu.readRawGyro();
   Vector normGyro = mpu.readNormalizeGyro();
-/*
-  Serial.print(" Xraw = ");
-  Serial.print(rawGyro.XAxis);
-  Serial.print(" Yraw = ");
-  Serial.print(rawGyro.YAxis);
-  Serial.print(" Zraw = ");
-  Serial.println(rawGyro.ZAxis);
-*/
-/*
-  Serial.print(" Xnorm = ");
-  Serial.print(normGyro.XAxis);
-  Serial.print(" Ynorm = ");
-  Serial.print(normGyro.YAxis);
-  Serial.print(" Znorm = ");
-  Serial.println(normGyro.ZAxis);
-  */
+
 //base control
- /*
-  if(rawGyro.XAxis>900)
-    previousPos=turnUp(previousPos);
-  //if x-axis<-200, turn down
-  if(rawGyro.XAxis<-900)
-    previousPos=turnDown(previousPos);
- */ 
  
 //wing control
   speed=map(rawGyro.YAxis,-17000,17000,-125,125);
@@ -173,7 +161,7 @@ void loop()
   Serial.write(int(speed));// int(speed)
   
  
-  analogWrite(enA, 200);
+  analogWrite(enA, speed);
 
   delay(500);
 
