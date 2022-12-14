@@ -1,0 +1,64 @@
+STEP translation to Solid Edge
+Date: fredag,november 25,2022 11:08
+Source File: C:\Users\Hala Mawas\Downloads\mecanismo-simulacao-passaro-mechanism-bird-1.snapshot.3\Montagem.STEP
+Author: Unknown
+Organization: Unknown
+Source System: SolidWorks 2017
+
+Hardware:
+Processor: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
+Operating System: Windows 10
+Installed Memory: 7.83 GB
+
+Software Information
+Parasolid Version: 32.1.222
+PSBodyShop Version: 32.1.94
+Step Adapter Version: 5.0.107
+Solid Edge Version: 221.00.00.114 x64
+
+Step Import Options
+Import Faceted Bodies: On
+Import Check Bodies: Off
+Import Curves: On
+Import DoNotSave: On
+Import Multiple Bodies As Single Part File: On
+Import Stitch Surfaces: On
+Import Boolean Solids: On
+Make Base Feature: On
+Simplify Geometry: On
+Import Imprint Curves: On
+Import Drive: C:
+Import Stitch Surfaces: On
+Import Surfaces: On
+Import Output Path: C:\Users\Hala Mawas\Downloads\mecanismo-simulacao-passaro-mechanism-bird-1.snapshot.3
+Import Enable Default Output Path: On
+Import PMI: Off
+Import As Internal Components: Off
+Import Path: 
+
+Translating to Parasolid data types...
++Begin Assembly: 1
++Created SE Assembly File C:\Users\Hala Mawas\Downloads\mecanismo-simulacao-passaro-mechanism-bird-1.snapshot.3\Montagem.asm
+|--+Created SE Part File C:\Users\Hala Mawas\Downloads\mecanismo-simulacao-passaro-mechanism-bird-1.snapshot.3\Suporte.par
+|--+Created SE Part File C:\Users\Hala Mawas\Downloads\mecanismo-simulacao-passaro-mechanism-bird-1.snapshot.3\Corpo.par
+|--+Created SE Part File C:\Users\Hala Mawas\Downloads\mecanismo-simulacao-passaro-mechanism-bird-1.snapshot.3\Asa Direita 1.par
+|--+Created SE Part File C:\Users\Hala Mawas\Downloads\mecanismo-simulacao-passaro-mechanism-bird-1.snapshot.3\Asa Direita 2.par
+|--+Created SE Part File C:\Users\Hala Mawas\Downloads\mecanismo-simulacao-passaro-mechanism-bird-1.snapshot.3\Link Asas.par
+|--+Created SE Part File C:\Users\Hala Mawas\Downloads\mecanismo-simulacao-passaro-mechanism-bird-1.snapshot.3\Link Engrenagem Asa Direito.par
+|--+Created SE Part File C:\Users\Hala Mawas\Downloads\mecanismo-simulacao-passaro-mechanism-bird-1.snapshot.3\Asa Esquerda 2_Default_As Machined_.par
+|--+Created SE Part File C:\Users\Hala Mawas\Downloads\mecanismo-simulacao-passaro-mechanism-bird-1.snapshot.3\Asa Esquerda 1.par
+|--+Reusing File C:\Users\Hala Mawas\Downloads\mecanismo-simulacao-passaro-mechanism-bird-1.snapshot.3\Link Asas.par
+|--+Created SE Part File C:\Users\Hala Mawas\Downloads\mecanismo-simulacao-passaro-mechanism-bird-1.snapshot.3\Link Engrenagem Asa Esquerdo.par
+|--+Created SE Part File C:\Users\Hala Mawas\Downloads\mecanismo-simulacao-passaro-mechanism-bird-1.snapshot.3\Engrenagem Movimentacao.par
+|--+Reusing File C:\Users\Hala Mawas\Downloads\mecanismo-simulacao-passaro-mechanism-bird-1.snapshot.3\Engrenagem Movimentacao.par
+|--+Created SE Part File C:\Users\Hala Mawas\Downloads\mecanismo-simulacao-passaro-mechanism-bird-1.snapshot.3\Engrenagem Intermediaria.par
+|--+Reusing File C:\Users\Hala Mawas\Downloads\mecanismo-simulacao-passaro-mechanism-bird-1.snapshot.3\Engrenagem Intermediaria.par
+|--+Created SE Part File C:\Users\Hala Mawas\Downloads\mecanismo-simulacao-passaro-mechanism-bird-1.snapshot.3\Engrenagem Inversora.par
+|--+Created SE Part File C:\Users\Hala Mawas\Downloads\mecanismo-simulacao-passaro-mechanism-bird-1.snapshot.3\Engrenagem Manivela.par
++Total Parts: 29
++Assemblies: 0
++Solid Bodies: 29
++Sheet Bodies: 0
++End Assembly: 1
+Translation process completed
+Total time required to translate and post process:00 : 00 : 17

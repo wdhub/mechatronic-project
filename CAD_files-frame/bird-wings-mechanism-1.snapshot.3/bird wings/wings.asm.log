@@ -1,0 +1,63 @@
+ProEngineer translation to Solid Edge
+Date: fredag,december 02,2022 05:34
+Source File: C:\Users\rimmie\OneDrive - KTH\PhD\Course work\MF2104- Mechatronics\mechatronic-project\CAD_files-frame\bird-wings-mechanism-1.snapshot.3\bird wings\wings.asm.1
+Author:  
+Organization:  
+Source System: Pro/ENGINEER
+
+Hardware:
+Processor: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
+Operating System: Windows 8
+Installed Memory: 31.72 GB
+
+Software Information
+Parasolid Version: 34.0.153
+PSBodyShop Version: 34.0.110
+Translator Version: 24.124.0
+Solid Edge Version: 222.00.08.003 x64
+
+Pro/ENGINEER Import Options
+Import Free Surfaces: Off
+Import Stitched Surfaces: On
+Boolean Solid Bodies: On
+Make Base Feature: On
+Simplify Geometry: Off
+Heal and Sewing Enabled: Off
+Enable Internal Healing: On
+
+Phase 1 of 2 Translating to Parasolid data types...
+End of Translation to Parasolid Data Types
+Time required to translate:00 : 00 : 03
+Stitching free surfaces...
+
+Phase 2 of 2 Creating Parasolid entities...
+Translation process completed
+Total time required to translate and post process:00 : 00 : 03
+g Solid Body 1 of 7
+Created SE Part File C:\Users\rimmie\OneDrive - KTH\PhD\Course work\MF2104- Mechatronics\mechatronic-project\CAD_files-frame\bird-wings-mechanism-1.snapshot.3\bird wings\P1.par
+Placing P1.par:1
+
+Processing Solid Body 2 of 7
+Created SE Part File C:\Users\rimmie\OneDrive - KTH\PhD\Course work\MF2104- Mechatronics\mechatronic-project\CAD_files-frame\bird-wings-mechanism-1.snapshot.3\bird wings\PRT0014.par
+Placing PRT0014.par:1
+
+Processing Solid Body 3 of 7
+Reusing File C:\Users\rimmie\OneDrive - KTH\PhD\Course work\MF2104- Mechatronics\mechatronic-project\CAD_files-frame\bird-wings-mechanism-1.snapshot.3\bird wings\PRT0014.par
+Placing PRT0014.par:2
+
+Processing Solid Body 4 of 7
+Created SE Part File C:\Users\rimmie\OneDrive - KTH\PhD\Course work\MF2104- Mechatronics\mechatronic-project\CAD_files-frame\bird-wings-mechanism-1.snapshot.3\bird wings\PRT0012.par
+Placing PRT0012.par:1
+
+Processing Solid Body 5 of 7
+Created SE Part File C:\Users\rimmie\OneDrive - KTH\PhD\Course work\MF2104- Mechatronics\mechatronic-project\CAD_files-frame\bird-wings-mechanism-1.snapshot.3\bird wings\LINK2_0.par
+Placing LINK2_0.par:1
+
+Processing Solid Body 6 of 7
+Reusing File C:\Users\rimmie\OneDrive - KTH\PhD\Course work\MF2104- Mechatronics\mechatronic-project\CAD_files-frame\bird-wings-mechanism-1.snapshot.3\bird wings\LINK2_0.par
+Placing LINK2_0.par:2
+
+Processing 1 Sheet Bodies
+Created SE Part File C:\Users\rimmie\OneDrive - KTH\PhD\Course work\MF2104- Mechatronics\mechatronic-project\CAD_files-frame\bird-wings-mechanism-1.snapshot.3\bird wings\prt0011.prt.5.par
+Placing prt0011.prt.5.par:1
+
